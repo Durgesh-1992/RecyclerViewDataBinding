@@ -75,12 +75,10 @@ class EmployeeDetailAdapter(
         }
         val diffCallback = EmployeeDiffCallback(mEmployeeList, employees)
         val diffResult: DiffUtil.DiffResult = DiffUtil.calculateDiff(diffCallback)
-//        this.mEmployees.clear()
-//        this.mEmployees.addAll(ArrayList<Employee>(employees))
-        mEmployeeList.clear()
-        mEmployeeList.addAll(ArrayList<Employee>(employees))
-        setData(mEmployeeList)
         diffResult.dispatchUpdatesTo(this)
+        mEmployees.clear()
+        mEmployees.addAll(ArrayList<Employee>(employees))
+
 
     }
 

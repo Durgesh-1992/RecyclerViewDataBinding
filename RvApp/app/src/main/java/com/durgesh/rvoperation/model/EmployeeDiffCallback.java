@@ -30,21 +30,23 @@ public class EmployeeDiffCallback extends DiffUtil.Callback {
 
     @Override
     public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-        return mOldEmployeeList.get(oldItemPosition).getId() == mNewEmployeeList.get(
-                newItemPosition).getId();
+        return String.valueOf(mOldEmployeeList.get(oldItemPosition).getId()).equalsIgnoreCase(String.valueOf(mNewEmployeeList.get(
+                newItemPosition).getId()));
     }
 
     @Override
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
         final Employee oldEmployee = mOldEmployeeList.get(oldItemPosition);
         final Employee newEmployee = mNewEmployeeList.get(newItemPosition);
-        Log.d(TAG,"oldEmployee.performance.equals(newEmployee.performance) "+oldEmployee.performance + " " +newEmployee.performance);
-        return oldEmployee.getName().equals(newEmployee.getName()) && oldEmployee.performance.equals(newEmployee.performance);
+
+        return (oldEmployee.getName().equals(newEmployee.getName())
+                && oldEmployee.performance.equals(newEmployee.performance));
     }
 
     @Override
     public Object getChangePayload(int oldItemPosition, int newItemPosition) {
         // Implement method if you're going to use ItemAnimator
+        Log.d(TAG, "oldItemPosition " + oldItemPosition + " newItemPosition " + newItemPosition);
         return super.getChangePayload(oldItemPosition, newItemPosition);
     }
 }

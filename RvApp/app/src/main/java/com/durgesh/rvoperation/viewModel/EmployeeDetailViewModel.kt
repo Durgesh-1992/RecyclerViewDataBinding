@@ -56,7 +56,7 @@ class EmployeeDetailViewModel : ViewModel() {
         Log.i(TAG, "updated found?.performance :: ${found?.performance} , ${found?.name}")
         if (mEmployeeList.indexOf(employee) < mEmployeeList.size && mEmployeeList.indexOf(employee) > -1) {
             mEmployeeList[mEmployeeList.indexOf(employee)] = found!!
-            mEmployeeLiveData?.value = mEmployeeList
+//            mEmployeeLiveData?.value = mEmployeeList
         }
     }
 
@@ -67,7 +67,7 @@ class EmployeeDetailViewModel : ViewModel() {
         Log.i(TAG, "updated found?.performance :: ${found?.performance} , ${found?.name}")
         if (mEmployeeList.indexOf(employee) < mEmployeeList.size && mEmployeeList.indexOf(employee) > -1) {
             mEmployeeList[mEmployeeList.indexOf(employee)] = found!!
-            mEmployeeLiveData?.value = mEmployeeList
+//            mEmployeeLiveData?.value = mEmployeeList
         }
     }
 
